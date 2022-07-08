@@ -1,0 +1,280 @@
+﻿Function SignIn()
+Dim UserName, Password
+UserName =  DataTable.Value("Username","Test Data")
+Password = DataTable.Value("Password","Test Data")
+Browser(browserObject).Page(pageObject).Link(HelloSignin).Click
+Browser(browserObject).Page(pageObject).WebEdit(UserID).Set UserName
+Browser(browserObject).Page(pageObject).WebButton(ClickContinue).Click
+Browser(browserObject).Page(pageObject).WebEdit(SetPassword).SetSecure Password
+Browser(browserObject).Page(pageObject).WebButton(SubmitSI).Click
+End Function
+
+Function SignOut()
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser(browserObject).Page(pageObject).Link(MouseOver).FireEvent("OnMouseOver")
+Browser(browserObject).Page(pageObject).WebElement(AccSignOut).Click
+End Function
+
+
+Function TC_01()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Home & Kitchen"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).Link(HomeAndKitchen).Click
+wait(5)
+res1=Browser(browserObject).Page(pageObject).Link(Checkpoint01).GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_01","Pass"
+	TC_01="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_01","Fail"
+	TC_01="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+Function TC_02()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Inverters"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).Link(HAndkAppliances).Click
+Browser(browserObject).Page(pageObject).WebElement(Invert).Click
+wait(5)
+res1=Browser(browserObject).Page(pageObject).WebElement(Checkpoint02).GetROProperty("text")
+
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_02","Pass"
+	TC_02="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_02","Fail"
+	TC_02="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_03()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Lighting"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).Link(Light).Click
+wait(5)
+res1=Browser(browserObject).Page(pageObject).WebElement(Checkpoint03).GetROProperty("text")
+
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_03 ","Pass"
+	TC_03="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_03 ","Fail"
+	TC_03="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_04()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Parts and Accessories"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).WebElement(LargeAppliances).Click
+Browser(browserObject).Page(pageObject).WebElement(PartsAndAccessories).Click
+wait(5)
+res1=Browser(browserObject).Page(pageObject).WebElement(Checkpoint04).GetROProperty("text")
+
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_04","Pass"
+	TC_04="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_04","Fail"
+	TC_04="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+Function TC_05()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Bookshelves"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).WebElement(Furniture).Click
+Browser(browserObject).Page(pageObject).Link(Bookshelve).Click
+wait(5)
+res1 = Browser(browserObject).Page(pageObject).WebElement(Checkpoint05).GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_05","Pass"
+	TC_05="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_05","Fail"
+	TC_05="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_06()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Home Furnishing"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).WebElement(Furn).Click
+wait(5)
+res1 = Browser(browserObject).Page(pageObject).WebElement(Checkpoint06).GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_06","Pass"
+	TC_06="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_06","Fail"
+	TC_06="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+Function TC_07()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Dishwashers"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).WebElement(LargeAppliances).Click
+Browser(browserObject).Page(pageObject).WebElement(Dishwasher).Click
+wait(5)
+res1 = Browser(browserObject).Page(pageObject).WebElement(Checkpoint07).GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_07","Pass"
+	TC_07="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_07","Fail"
+	TC_07="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_08()
+
+Dim searchString,res1
+'searchString="Vacuum, Cleaning & Ironing"
+searchString=DataTable.Value("Expected_Value","Test Data")
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).Link(HAndkAppliances).Click
+Browser(browserObject).Page(pageObject).WebElement(VacuumCnI).Click
+wait(5)
+res1 = Browser(browserObject).Page(pageObject).WebElement(Checkpoint08).GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_08","Pass"
+	TC_08="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_08","Fail"
+	TC_08="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+Function TC_09()
+
+Dim searchString,res1
+'searchString="Vacuums & Floor Care"
+searchString=DataTable.Value("Expected_Value","Test Data")
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).Link(HAndkAppliances).Click
+Browser(browserObject).Page(pageObject).WebElement(VacuumCnI).Click
+Browser(browserObject).Page(pageObject).WebElement(VacuumFloorCare).Click
+wait(5)
+res1 = Browser(browserObject).Page(pageObject).WebElement(Checkpoint09).GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_09","Pass"
+	TC_09="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_09","Fail"
+	TC_09="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+Function TC_10()
+
+Dim searchString,res1
+searchString=DataTable.Value("Expected_Value","Test Data")
+'searchString="Sofa Sets"
+SignIn()
+Browser(browserObject).Page(pageObject).WebList(HAndKDropdownBox).Select "Home & Kitchen"
+Browser(browserObject).Page(pageObject).WebButton(Go).Click
+Browser(browserObject).Page(pageObject).WebElement(Furniture).Click
+Browser(browserObject).Page(pageObject).Link(SofaSet).Click
+wait(5)
+res1 = Browser(browserObject).Page(pageObject).WebElement(Checkpoint10).GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_10","Pass"
+	TC_10="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_10","Fail"
+	TC_10="Fail"
+End If
+SignOut()
+wait(5)
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+﻿Set HelloSignin = Description.Create  
+HelloSignin("innertext").value="Hello, Sign in Account & Lists"
+
+Set UserID = Description.Create  
+UserID("html id").value="ap_email"
+
+Set ClickContinue = Description.Create  
+ClickContinue("html id").value="continue"
+
+Set SetPassword = Description.Create  
+SetPassword("html id").value="ap_password"
+
+Set SubmitSI = Description.Create  
+SubmitSI("html id").value="signInSubmit"
+
+Set MouseOver = Description.Create  
+MouseOver("html id").value="nav-link-accountList"
+
+Set AccSignOut = Description.Create  
+AccSignOut("xpath").value="//A[@id='nav-item-signout']/SPAN[normalize-space()='Sign Out']"
+
+Set browserObject = Description.Create  
+browserObject("creationtime").value="0"
+
+Set pageObject = Description.Create
+pageObject("micclass").value ="Page"
+
+Set HAndKDropdownBox = Description.Create
+HAndKDropdownBox("html id").value ="searchDropdownBox"
+
+Set Go = Description.Create
+Go("name").value ="Go"
+
+Set HomeAndKitchen=  Description.Create  
+HomeAndKitchen("innerhtml").value="Home &amp; Kitchen"
+
+Set Checkpoint01=  Description.Create
+Checkpoint01("innerhtml").value="Home &amp; Kitchen"
+
+Set HAndkAppliances =  Description.Create
+HAndkAppliances("innerhtml").value="Kitchen &amp; Home Appliances"
+
+Set Invert = Description.Create
+Invert("innerhtml").value="Inverters"
+
+Set Checkpoint02 =  Description.Create
+Checkpoint02("xpath").value="//LI/SPAN[normalize-space()='Inverters']/SPAN[1]"
+
+Set Light = Description.Create
+Light("xpath").value="//DIV[@id='a-page']/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/UL[2]/LI[8]/A[1]"
+
+Set Checkpoint03 =  Description.Create
+Checkpoint03("xpath").value="//DIV/DIV[normalize-space()='Lighting']/SPAN[1]"
+
+Set LargeAppliances =  Description.Create
+LargeAppliances("xpath").value="//DIV[@id='nav-subnav']/A[3]/SPAN[1]"
+
+Set PartsAndAccessories =  Description.Create
+PartsAndAccessories("innerhtml").value="Parts &amp; Accessories"
+
+Set Checkpoint04 =  Description.Create
+Checkpoint04("xpath").value="//LI/SPAN[normalize-space()='Parts & Accessories']/SPAN[1]"
+
+Set Furniture =  Description.Create
+Furniture("xpath").value="//DIV[@id='nav-subnav']/A[5]/SPAN[1]"
+
+Set Bookshelve =  Description.Create
+Bookshelve("xpath").value="//DIV[@id='a-page']/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/UL[2]/LI[6]/A[1]"
+
+Set Checkpoint05 =  Description.Create
+Checkpoint05("xpath").value="//DIV/DIV/H1/B[normalize-space()='Bookshelves']"
+
+Set Furn =  Description.Create
+Furn("xpath").value="//DIV[@id='nav-subnav']/A[6]/SPAN[1]"
+
+Set Checkpoint06 =  Description.Create
+Checkpoint06("xpath").value="//LI/SPAN[normalize-space()='Home Furnishing']/SPAN[1]"
+
+Set Dishwasher =  Description.Create
+Dishwasher("outerhtml").value="<span dir=""auto"">Dishwashers</span>"
+
+Set Checkpoint07 =  Description.Create
+Checkpoint07("xpath").value="//LI/SPAN[normalize-space()='Dishwashers']/SPAN[1]"
+
+Set VacuumCnI =  Description.Create
+VacuumCnI("outerhtml").value="<span dir=""auto"">Vacuum, Cleaning &amp; Ironing</span>"
+
+Set Checkpoint08 =  Description.Create
+Checkpoint08("xpath").value="//LI[3]/SPAN[1]/SPAN[1]"
+
+Set VacuumFloorCare =  Description.Create
+VacuumFloorCare("outerhtml").value="<span dir=""auto"">Vacuums &amp; Floor Care</span>"
+
+Set Checkpoint09 =  Description.Create
+Checkpoint09("xpath").value="//LI/SPAN[normalize-space()='Vacuums & Floor Care']/SPAN[1]"
+
+Set SofaSet =  Description.Create
+SofaSet("outerhtml").value="<a href=""/gp/browse\.html\?rw_useCurrentProtocol=1&amp;node=5689463031&amp;ref_=amb_link_nqUiQnghSlqGKWxLfq9PBw_12"">Sofa Sets</a>"
+
+Set Checkpoint10 =  Description.Create
+Checkpoint10("xpath").value="//DIV/DIV/H1/B[normalize-space()='Sofa Set']"
+

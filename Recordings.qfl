@@ -1,0 +1,226 @@
+﻿
+Function TC_11()
+
+Dim searchString,res1
+'searchString="Buy products across Home,Kitch"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+res1=Browser("Browser_3").Page("Home Store: Buy Home &_3").WebElement("Buy products across Home,Kitch").GetROProperty("text")
+
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_11","Pass"
+	TC_11="Pass"
+Else
+	Reporter.ReportEvent miccPass,"HomeKitchen","Fail"
+	TC_11="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+Function TC_12()
+	
+Dim searchString,res1
+'searchString="Inverters_3"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Kitchen & Home Appliances").Click
+Browser("Browser_3").Page("Buy Large Appliances Online").Link("Inverters").Click
+res1=Browser("Browser_3").Page("Appliance Parts & Accessories:").WebElement("Inverters_3").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_12","Pass"
+	TC_12="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_12","Fail"
+	TC_12="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+Function TC_13()
+	
+ Dim searchString,res1
+'searchString="Lighting"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Lighting").Click
+res1=Browser("Browser_3").Page("Home Store: Buy Home &_2").WebElement("Lighting").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_13 ","Pass"
+	TC_13="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_13 ","Fail"
+	TC_13="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_14()
+	
+Dim searchString,res1
+'searchString="Parts & Accessories"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Large Appliances").Click
+Browser("Browser_3").Page("Buy Large Appliances Online").Link("Parts & Accessories").Click
+res1=Browser("Browser_3").Page("Appliance Parts & Accessories:").WebElement("Parts & Accessories").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_14","Pass"
+	TC_14="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_14","Fail"
+	TC_14="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+Function TC_15()
+	
+Dim searchString,res1
+'searchString="Bookshelves_2"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Furniture").Click
+Browser("Browser_3").Page("Buy Large Appliances Online").Link("Bookshelves").Click
+res1=Browser("Browser_3").Page("Home Store: Buy Home &_2").WebElement("Bookshelves_2").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_15","Pass"
+	TC_15="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_15","Fail"
+	TC_15="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_16()
+	
+Dim searchString,res1
+'searchString="Home Furnishing_3"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Home Furnishing").Click
+res1=Browser("Browser_3").Page("Buy Large Appliances Online").WebElement("Home Furnishing_3").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_16","Pass"
+	TC_16="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_16","Fail"
+	TC_16="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_17()
+	
+Dim searchString,res1
+'searchString="Dishwashers_2"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Large Appliances").Click
+Browser("Browser_3").Page("Buy Large Appliances Online").Link("Dishwashers_2").Click
+res1=Browser("Browser_3").Page("Appliance Parts & Accessories:").WebElement("Dishwashers_2").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_17","Pass"
+	TC_17="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_17","Fail"
+	TC_17="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_18()
+	
+Dim searchString,res1
+'searchString="Vacuum, Cleaning & Ironing_2"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Kitchen & Home Appliances").Click
+Browser("Browser_3").Page("Buy Large Appliances Online").Link("Vacuum, Cleaning & Ironing").Click
+res1=Browser("Browser_3").Page("Appliance Parts & Accessories:").WebElement("Vacuum, Cleaning & Ironing_2").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_18","Pass"
+	TC_18="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_18","Fail"
+	TC_18="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_19()
+	
+Dim searchString,res1
+'searchString="Vacuums & Floor Care_4"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Kitchen & Home Appliances").Click
+Browser("Browser_3").Page("Buy Large Appliances Online").Link("Vacuum, Cleaning & Ironing").Click
+Browser("Browser_3").Page("Appliance Parts & Accessories:").Link("Vacuums & Floor Care").Click
+res1=Browser("Browser_3").Page("Appliance Parts & Accessories:").WebElement("Vacuums & Floor Care_4").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_19","Pass"
+	TC_19="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_19","Fail"
+	TC_19="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+Function TC_20()
+	
+Dim searchString,res1
+'searchString="Sofa Set_2"
+searchString=DataTable.Value("Expected_Value","Test Data")
+Browser("Browser_3").Navigate "https://www.amazon.in/"
+Browser("Browser_3").Page("Online Shopping site in").WebList("url").Select "Home & Kitchen"
+Browser("Browser_3").Page("Online Shopping site in").WebButton("Go").Click
+Browser("Browser_3").Page("Home Store: Buy Home &_3").Link("Furniture").Click
+Browser("Browser_3").Page("Buy Large Appliances Online").Link("Sofa Sets").Click
+res1=Browser("Browser_3").Page("Home Store: Buy Home &_2").WebElement("Sofa Set_2").GetROProperty("text")
+If inStr(searchString,res1)>=0 Then
+	Reporter.ReportEvent miccPass,"TC_20","Pass"
+	TC_20="Pass"
+Else
+	Reporter.ReportEvent miccPass,"TC_20","Fail"
+	TC_20="Fail"
+End If
+'SystemUtil.CloseProcessByName"Chrome.exe"
+End Function
+
+
+
+
